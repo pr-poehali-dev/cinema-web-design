@@ -84,15 +84,15 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-secondary">
+        <section className="py-16 bg-gradient-to-br from-primary to-accent">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
-                <Icon name="Tv" size={36} className="text-primary" />
-                <h2 className="text-4xl font-bold text-secondary-foreground">Популярные сериалы</h2>
+                <Icon name="Tv" size={36} className="text-white" />
+                <h2 className="text-4xl font-bold text-white">Популярные сериалы</h2>
               </div>
               <Link to="/series">
-                <Button variant="outline" size="lg" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/95">
                   Все сериалы
                   <Icon name="ArrowRight" size={20} className="ml-2" />
                 </Button>
@@ -106,11 +106,11 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-secondary">
           <div className="container mx-auto px-4">
             <div className="flex items-center gap-3 mb-8">
-              <Icon name="MessageCircle" size={36} className="text-primary" />
-              <h2 className="text-4xl font-bold text-foreground">Отзывы зрителей</h2>
+              <Icon name="MessageCircle" size={36} className="text-white" />
+              <h2 className="text-4xl font-bold text-white">Отзывы зрителей</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {reviews.map(review => (
