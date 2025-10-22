@@ -100,7 +100,7 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {series.slice(0, 4).map(show => (
-                <MovieCard key={show.id} {...show} />
+                <MovieCard key={show.id} movie={show} />
               ))}
             </div>
           </div>

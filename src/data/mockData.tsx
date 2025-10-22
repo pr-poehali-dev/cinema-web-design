@@ -68,8 +68,8 @@ export const series = [
     genre: 'Фантастика',
     year: 2024,
     rating: 4.6,
-    seasons: 2,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Эпическая космическая сага о межзвездных путешествиях',
     type: 'series'
   },
   {
@@ -78,8 +78,8 @@ export const series = [
     genre: 'Триллер',
     year: 2023,
     rating: 4.1,
-    seasons: 3,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Мистический триллер о городских тайнах и легендах',
     type: 'series'
   },
   {
@@ -88,8 +88,8 @@ export const series = [
     genre: 'Драма',
     year: 2024,
     rating: 4.4,
-    seasons: 1,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Трогательная история о семейных отношениях и ценностях',
     type: 'series'
   },
   {
@@ -98,8 +98,8 @@ export const series = [
     genre: 'Детектив',
     year: 2023,
     rating: 4.7,
-    seasons: 2,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Детективный сериал о расследовании киберпреступлений',
     type: 'series'
   },
   {
@@ -108,8 +108,8 @@ export const series = [
     genre: 'Фантастика',
     year: 2024,
     rating: 4.8,
-    seasons: 1,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Захватывающее путешествие через параллельные реальности',
     type: 'series'
   },
   {
@@ -118,8 +118,8 @@ export const series = [
     genre: 'Драма',
     year: 2023,
     rating: 4.2,
-    seasons: 4,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Драматичная история о врачах и их пациентах',
     type: 'series'
   },
 ];
