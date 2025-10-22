@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SearchBar from '@/components/SearchBar';
 import MovieCard from '@/components/MovieCard';
+import { movies } from '@/data/mockData';
 import Icon from '@/components/ui/icon';
 
 const Movies = () => {
@@ -12,64 +13,15 @@ const Movies = () => {
     setSearchParams({ query, genre, year });
   };
 
-  const movies = [
-    {
-      title: 'Космическая Одиссея',
-      year: '2024',
-      genre: 'Фантастика',
-      rating: 8.9,
-      image: 'https://cdn.poehali.dev/projects/dc61e5ba-4de9-43e2-ab2a-e8a6e57069a8/files/0820f2e4-0d1e-47a2-841c-40ff84771f54.jpg'
-    },
-    {
-      title: 'Тайна Города',
-      year: '2024',
-      genre: 'Триллер',
-      rating: 8.5,
-      image: 'https://cdn.poehali.dev/projects/dc61e5ba-4de9-43e2-ab2a-e8a6e57069a8/files/0820f2e4-0d1e-47a2-841c-40ff84771f54.jpg'
-    },
-    {
-      title: 'Легенда Героя',
-      year: '2023',
-      genre: 'Боевик',
-      rating: 9.1,
-      image: 'https://cdn.poehali.dev/projects/dc61e5ba-4de9-43e2-ab2a-e8a6e57069a8/files/0820f2e4-0d1e-47a2-841c-40ff84771f54.jpg'
-    },
-    {
-      title: 'Комедия Года',
-      year: '2023',
-      genre: 'Комедия',
-      rating: 7.8,
-      image: 'https://cdn.poehali.dev/projects/dc61e5ba-4de9-43e2-ab2a-e8a6e57069a8/files/0820f2e4-0d1e-47a2-841c-40ff84771f54.jpg'
-    },
-    {
-      title: 'Драма Жизни',
-      year: '2024',
-      genre: 'Драма',
-      rating: 8.7,
-      image: 'https://cdn.poehali.dev/projects/dc61e5ba-4de9-43e2-ab2a-e8a6e57069a8/files/0820f2e4-0d1e-47a2-841c-40ff84771f54.jpg'
-    },
-    {
-      title: 'Ужас Ночи',
-      year: '2024',
-      genre: 'Ужасы',
-      rating: 7.5,
-      image: 'https://cdn.poehali.dev/projects/dc61e5ba-4de9-43e2-ab2a-e8a6e57069a8/files/0820f2e4-0d1e-47a2-841c-40ff84771f54.jpg'
-    },
-    {
-      title: 'Приключение Века',
-      year: '2023',
-      genre: 'Боевик',
-      rating: 8.3,
-      image: 'https://cdn.poehali.dev/projects/dc61e5ba-4de9-43e2-ab2a-e8a6e57069a8/files/0820f2e4-0d1e-47a2-841c-40ff84771f54.jpg'
-    },
-    {
-      title: 'Романтика',
-      year: '2023',
-      genre: 'Комедия',
-      rating: 7.9,
-      image: 'https://cdn.poehali.dev/projects/dc61e5ba-4de9-43e2-ab2a-e8a6e57069a8/files/0820f2e4-0d1e-47a2-841c-40ff84771f54.jpg'
-    }
-  ];
+  const filteredMovies = movies.filter(movie => {
+    const matchesQuery = !searchParams.query || 
+      movie.title.toLowerCase().includes(searchParams.query.toLowerCase());
+    const matchesGenre = !searchParams.genre || searchParams.genre === 'all' || 
+      movie.genre.toLowerCase() === searchParams.genre.toLowerCase();
+    const matchesYear = !searchParams.year || searchParams.year === 'all' || 
+      movie.year.toString() === searchParams.year;
+    return matchesQuery && matchesGenre && matchesYear;
+  });
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -85,15 +37,20 @@ const Movies = () => {
         </div>
       </section>
 
-      <main className="flex-grow">
+      <main className="flex-grow bg-muted/30">
         <section className="container mx-auto px-4 -mt-10 relative z-20 mb-16">
           <SearchBar onSearch={handleSearch} />
         </section>
 
         <section className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {movies.map((movie, index) => (
-              <MovieCard key={index} {...movie} />
+          <div className="mb-6">
+            <p className="text-muted-foreground">
+              Найдено: <span className="font-semibold text-foreground">{filteredMovies.length}</span> {filteredMovies.length === 1 ? 'фильм' : 'фильмов'}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filteredMovies.map((movie) => (
+              <MovieCard key={movie.id} movie={movie} />
             ))}
           </div>
         </section>

@@ -45,7 +45,7 @@ export default function Header({ onSearch, activeSection, onNavigate }: HeaderPr
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <Icon name="Film" size={32} className="text-primary" />
-            <h1 className="text-2xl font-bold text-primary">КиноПоток</h1>
+            <h1 className="text-2xl font-bold text-primary">КиноМир</h1>
           </div>
           
           <nav className="flex gap-2">
