@@ -2,7 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 
-interface MovieCardProps {
+interface Movie {
   id: number;
   title: string;
   year: number;
@@ -11,9 +11,15 @@ interface MovieCardProps {
   image: string;
   description: string;
   type: 'movie' | 'series';
+  seasons?: number;
 }
 
-const MovieCard = ({ title, year, genre, rating, image, description }: MovieCardProps) => {
+interface MovieCardProps {
+  movie: Movie;
+}
+
+const MovieCard = ({ movie }: MovieCardProps) => {
+  const { title, year, genre, rating, image, description } = movie;
   
   return (
     <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 group">

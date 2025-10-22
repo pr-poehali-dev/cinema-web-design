@@ -6,6 +6,7 @@ export const movies = [
     year: 2023,
     rating: 3.5,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'История о силе духа и преодолении трудностей в современном мире',
     type: 'movie'
   },
   {
@@ -15,6 +16,7 @@ export const movies = [
     year: 2024,
     rating: 4.2,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Захватывающее космическое приключение на границе галактики',
     type: 'movie'
   },
   {
@@ -24,6 +26,7 @@ export const movies = [
     year: 2023,
     rating: 4.5,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Напряжённый боевик о последней операции спецназа',
     type: 'movie'
   },
   {
@@ -33,6 +36,7 @@ export const movies = [
     year: 2024,
     rating: 4.8,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Увлекательное путешествие в глубины океана и его обитателей',
     type: 'movie'
   },
   {
@@ -42,6 +46,7 @@ export const movies = [
     year: 2024,
     rating: 4.3,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Мрачный триллер о тайнах большого города',
     type: 'movie'
   },
   {
@@ -51,6 +56,7 @@ export const movies = [
     year: 2023,
     rating: 4.6,
     image: 'https://v3b.fal.media/files/b/monkey/UxfXtC9VkKS1DnDdlQypS_output.png',
+    description: 'Эпическое приключение героя в поисках древних артефактов',
     type: 'movie'
   },
 ];
